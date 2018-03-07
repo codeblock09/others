@@ -9,7 +9,7 @@ int main()
     while(t--)
     {
         int n,k;    si(n);  si(k);
-        ll a[n];
+        int a[n];
         for(int i=0;i<n;i++)    sl(a[i]);
         ll win=0,up=0,down=0;
         for(int i=0;i<k;i++)    win+=a[i];
@@ -25,3 +25,4 @@ int main()
         printf("%lld\n",up-down);
     }
 }
+
