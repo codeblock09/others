@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+#define ll long long int
+#define si(x) scanf("%d",&x)
+#define sl(x) scanf("%lld",&x)
+using namespace std;
+int main()
+{
+    int t;  si(t);
+    while(t--)
+    {
+        int n,k;    si(n);  si(k);
+        ll a[n];
+        for(int i=0;i<n;i++)    sl(a[i]);
+        ll win=0,up=0,down=0;
+        for(int i=0;i<k;i++)    win+=a[i];
+        down=win;
+        up=win;
+        for(int i=1;i+k<=n;i++)
+        {
+            win-=a[i-1];
+            win+=a[i+k-1];
+            up=max(up,win);
+            down=min(down,win);
+        }
+        printf("%lld\n",up-down);
+    }
+}
